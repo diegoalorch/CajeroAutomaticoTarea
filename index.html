@@ -1,0 +1,277 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cajero Automatico</title>
+    <link rel="stylesheet" href="css/estilos.css">
+    <link rel="icon" href="imagenes/ic.ico">
+</head>
+<body>
+<!-- ******** Comienzo del DIV principal ******** --> 
+    <div class="cuadro" style="float: left;"><br>
+        <!-- Flechas 1x1 -->
+        <table style="float: left;">
+            <tr>
+                <td>
+                    <br><br><br><br><br>
+                    <button class="bflecha" id="BTN_ret" ></button>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <button class="bflecha" id="BTN_con" ></button>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <button class="bflecha" id="BTN_ope" ></button>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <button class="bflecha" id="BTN_blanco1" ></button>
+                </td>
+            </tr>
+        </table>
+        <!-- Fin de las flechas 1x1 -->
+<!-- ************************************ -->
+        <!-- Pantalla y sub pantallas -->
+        <div class="scuadro" style="float: left;">
+           <div class="tcuadro" style="float: left;margin-top: 8px;" id="MostrarOcultar">
+                <div class="pantalla" style="font-size: 25px;">
+                    <b style="color: black;">¡Bienvenidos Al Banco ALOR!</b><br>
+                    <b style="font-size: 21px; color: black;">Por Favor Digite Su Clave</b><br>
+                    <input type="text" class="password" id="pass" disabled="disabled" style="font-size: 45px; text-align: center; margin-top: 10px;">
+                </div>
+            </div>
+            <div class="tcuadro" style="float: left;margin-top: 8px;" id="vistaMenuPrincipal" hidden>
+                <div class="pantalla" style="font-size: 25px;" id="MenuPrincipal">
+                    <b style="margin-left: 21%;">MENU PRINCIPAL</b><br>
+                    <br><br>
+                    <b style="font-size: 17.5px; margin-left: 6%; float: left; margin-top: 12px;">RETIRO</b>
+                    <b style="font-size: 17.5px; margin-right: 9%; float: right; margin-top: 12px;">TRANSFERENCIA</b><br>
+                    <b style="font-size: 17.5px ; margin-left: -16.5%; float: left; margin-top: 23.5px;">CONSULTA</b>
+                    <b style="font-size: 17.5px;"> </b><br><br>
+                    <b style="font-size: 17.5px; margin-left: 6%; float: left; margin-top: 8px;">OPERACIONES</b>
+                    <b style="font-size: 17.5px; margin-right: 8%; float: right;">ULTIMOS</b>
+                    <b style="font-size: 17.5px; margin-left: 61%; float: left; margin-top: -15px;">MOVIMIENTOS</b>
+                </div>
+                <div class="pantalla" style="font-size: 25px;" id="Retiro" hidden>
+                    <b style="margin-left: 37%;">RETIRO</b><br>
+                    <br><br>
+                    <b style="font-size: 17.5px; margin-left: -13.5%;">RETIRO</b>
+                    <b style="font-size: 17.5px; margin-left: 6.5%; float: left; margin-top: 25px;">SOLES</b>
+                    <b style="font-size: 17.5px; margin-left: 46%;">RETIRAR</b>
+                    <b style="font-size: 17.5px; margin-left: 49.5%; float: left; margin-top: -4px;">DOLARES</b><br>
+                    <b style="font-size: 17.5px; margin-left: 46.5%; float: left; margin-top: 85px;">CANCELAR</b>
+                </div>
+                <div class="pantalla" style="font-size: 25px;" id="RetiroPlata" hidden>
+                    <b style="margin-left: 37%;">RETIRO</b><br><br>
+                    <br>
+                    <b style="font-size: 18.5px; float: left; margin-top: 12px; margin-left: 26px;">S/.20</b>
+                    <b style="font-size: 18.5px; float: right; margin-top: 12px; margin-right: 9.2%;">S/.100</b><br>
+                    <b style="font-size: 18.5px; float: left; margin-top: 23px; margin-left: -39px;">S/.150</b>
+                    <b style="font-size: 18.5px; float: right; margin-top: 23px; margin-right: -11%;">S/.200</b><br>
+                    <b style="font-size: 18.5px; float: left; margin-top: 35px; margin-left: -48px;">S/.300</b>
+                    <b style="font-size: 18.5px; float: right; margin-top: 30px; margin-right: -11%;">OTRAS</b>
+                    <b style="font-size: 17.5px; float: right; margin-top: 45px; margin-right: -15%;">CANTIDADES</b><BR>
+                    <b style="font-size: 18.5px; float: left; margin-top: 9px; margin-left: 277px;">CANCELAR</b>
+                </div>
+                <div class="pantalla" style="font-size: 20px;" id="retiromonto" hidden>
+                    <b style="margin-left: 12.5%;">INGRESAR MONTO A RETIRAR</b>
+                    <b style="margin-left: 24%; float: left;">EN MULTIPLO DE 10</b>
+                    <br><br><br>
+                    <b style="font-size: 18.5px; float: right; margin-top: 66.5px; margin-right: 9%;">CONFIRMAR</b><br>
+                    <b style="font-size: 18.5px; float: right; margin-top: 85px; margin-right: -28%;">CORREGIR</b><br>
+                    <b style="font-size: 18.5px; float: left; margin-top: 60px; margin-left: 282px;">CANCELAR</b>
+                </div>
+                <div class="pantalla" style="font-size: 25px;" id="retiroprocesado" hidden>
+                    <b style="margin-left: 7.5%;">TRANSACCION PROCESADA</b>
+                    <b style="margin-left: 18.5%; float: left; font-size: 20px; margin-top: 15px;">¿DESEA REALIZAR OTRA</b>
+                    <b style="margin-left: 29%; float: left; font-size: 20px;">TRANSACCION?</b>
+                    <br><br><br>
+                    <b style="font-size: 18.5px; float: right; margin-top: 95px; margin-right: 9.5%;">SI</b><br>
+                    <b style="font-size: 18.5px; float: left; margin-top: 20px; margin-left: 360px;">NO</b>
+                </div>
+                <div class="pantalla" style="font-size: 30px; text-align: center;" hidden>
+                    <b style="float: left; margin-top: 90px; margin-left: 130px;">GRACIAS,</b>
+                    <b style="float: left; margin-top: 10px; margin-left: 94px;">HASTA LUEGO</b>
+                </div>
+            </div>
+        </div><br><br><br><br><br>
+        <!-- Fin de Pantalla y sub pantallas -->
+    <!-- ************************************** -->
+        <!-- Segunda flechas 1x1 -->
+        <table>
+            <tr>
+                <td>
+                    <button class="bflecha" id="BTN_tra" >
+
+                    </button>
+                </td>
+            </tr>
+
+            <tr>
+                <td>
+                    <button class="bflecha" id="BTN_blanco2" >
+
+                    </button>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <button class="bflecha" id="BTN_ult" >
+
+                    </button>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <button class="bflecha" id="BTN_blanco3" ></button>
+                </td>
+            </tr>
+        </table><br>
+        <!-- Fin de Segunda flechas 1x1 -->
+<!-- ************************************ -->
+        <!-- Tabla de 1 x 3 -->
+        <table class="tabla" style="float: left;"><br>
+           <tr>
+               <td>
+                    <button class="botones" onclick="password('1')">
+                       <b id="num1">1</b>
+                    </button>
+               </td>
+               <td>
+                    <button class="botones" onclick="password('2')">
+                        <b id="num2">2</b>
+                    </button>
+                </td>
+                <td>
+                    <button class="botones" onclick="password('3')">
+                        <b id="num3">3</b>
+                    </button>
+                </td>
+           </tr>
+
+           <tr>
+            <td>
+                <button class="botones" onclick="password('4')">
+                    <b id="num4">4</b>
+                </button>
+            </td>
+            <td>
+                 <button class="botones" onclick="password('5')">
+                     <b id="num5">5</b>
+                 </button>
+             </td>
+             <td>
+                 <button class="botones" onclick="password('6')"> 
+                     <b id="num6">6</b>
+                 </button>
+             </td>
+           </tr>
+
+           <tr>
+            <td>
+                <button class="botones" onclick="password('7')">
+                    <b id="num7">7</b>
+                </button>
+            </td>
+            <td>
+                 <button class="botones" onclick="password('8')">
+                     <b id="num8">8</b>
+                 </button>
+             </td>
+             <td>
+                 <button class="botones" onclick="password('9')">
+                     <b id="num9">9</b>
+                </button>
+             </td>
+           </tr>
+
+           <tr>
+            <td>
+                <button class="botones" disabled>
+                    <b> </b>
+                </button>
+            </td>
+            <td>
+                 <button class="botones">
+                     <b id="num0" onclick="password('0')">0</b>
+                 </button>
+             </td>
+             <td>
+                 <button class="botones" onclick="password('.')">
+                     <b>.</b>
+                 </button>
+             </td>
+           </tr>
+        </table>
+        <!-- Fin de la tabla 1 x 3 -->
+<!-- ************************************ -->
+        <!-- Tabla de 1 x 1 -->
+        <table style="float: left;">
+            <tr>
+                <td>
+                    <button class="botones2" style="background-color: red; border: none 1; border-color: rgb(65, 0, 0);" onclick="cambiar(2)">
+                        <b>CANCEL</b>
+                    </button>
+                </td>
+            </tr>
+
+            <tr>
+                <td>
+                    <button class="botones2" style="background-color: rgb(228, 126, 2); border-color: rgb(165, 119, 1);" onclick="cambiar(3)">
+                        <b>CLEAR</b>
+                    </button>
+                </td>
+            </tr>
+
+            <tr>
+                <td>
+                    <button class="botones2" style="background-color: rgb(0, 155, 0); border-color: rgb(2, 73, 2);"  onclick="cambiar(1)">
+                        <b>OK</b>
+                    </button>
+                </td>
+            </tr>
+
+            <tr>
+                <td>
+                    <button class="botones2" style="background-color: rgb(87, 86, 86); border-color: rgb(68, 68, 68);" disabled>
+                        <b></b>
+                    </button>
+                </td>
+            </tr>
+        </table>
+        <!-- Fin Tabla de 1 x 1 --> 
+<!-- ************************************ -->
+        <b style="font-size: 18px; margin-left: 8px; float: left; color: white;">CARD</b>
+        <b style="font-size: 18px; margin-left: 87px; color: white;">RECEIPT</b>
+        <div class="card">
+            <div class="subcard" style="margin-top: 12px;">
+                
+            </div>
+        </div>
+        <div class="receipt">
+            <div class="subreceipt">
+
+            </div>
+        </div><br>
+        <b style="font-size: 18px; margin-left: 8px; color: white;">CASH</b>
+        <div class="cash">
+            <div class="subcash">
+
+            </div>
+        </div><br>
+        <b style="font-size: 18px; margin-left: 8px; color: white;">DEPOSIT</b>
+        <div class="deposit">
+            <div class="subdeposit">
+
+            </div>
+        </div>
+    </div>
+<!-- ******** Fin del DIV principal ******** -->
+    <script src="js/script.js"></script>
+</body>
+</html>
